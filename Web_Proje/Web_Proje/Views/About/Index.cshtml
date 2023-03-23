@@ -1,0 +1,23 @@
+﻿@using Web_Proje.Models.Siniflar
+@model List<Hakkimizda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <center><h3>Hakkımızda</h3></center>
+            @foreach (var x in Model)
+            { <center>
+    <img src="@x.FotoUrl" alt="" style="width:750px; height:450px;"/>
+            <br /><br />
+    <p style="margin-bottom:50px;">@x.Aciklama</p>
+</center>
+            
+            }
+        </div>
+    </div>
+</div>
+
