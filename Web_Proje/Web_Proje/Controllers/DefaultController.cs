@@ -14,7 +14,8 @@ namespace Web_Proje.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var degerler = c.Blogs.Take(4). ToList();
+            return View(degerler);
         }
         public ActionResult About()
         {
@@ -22,7 +23,7 @@ namespace Web_Proje.Controllers
         }
         public PartialViewResult Partial1()
         {
-            var degerler = c.Blogs.OrderByDescending(x =>x.ID).Take(2).ToList();
+            var degerler = c.Blogs.OrderByDescending(x =>x.ID).Take(3).ToList();
             return PartialView(degerler);
         }
         public PartialViewResult Partial2()

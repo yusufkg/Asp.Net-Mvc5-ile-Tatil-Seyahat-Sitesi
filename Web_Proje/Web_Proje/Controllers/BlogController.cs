@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using Web_Proje.Models.Siniflar;
 
-
 namespace Web_Proje.Controllers
 {
     public class BlogController : Controller

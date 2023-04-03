@@ -1,4 +1,6 @@
-﻿
+﻿@using Web_Proje.Models.Siniflar
+@model List<Blog>
+
 @{ ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_TestLayout.cshtml"; }
 
@@ -8,7 +10,7 @@
 <body>
 
     <div class="header-banner">
-        <div class="wrap">
+        <div class="wrap ">
             <div class="banner">
                 <div class="indent">
                     <h2 class="indent-left margin-bot">Plan the Easy Trip</h2>
@@ -55,10 +57,14 @@
 
                         <div class="slider">
                             <ul class="rslides" id="slider1">
-                                <li><img src="~/web/images/img1.jpg" alt=""></li>
-                                <li><img src="~/web/images/img2.jpg" alt=""></li>
-                                <li><img src="~/web/images/img3.jpg" alt=""></li>
-                                <li><img src="~/web/images/img4.jpg" alt=""></li>
+                                @foreach (var x in Model)
+                                {
+                                    <li><img src="@x.BlogImage" alt=""></li>
+                                }
+
+                                @*<li><img src="~/web/images/img2.jpg" alt=""></li>
+                                    <li><img src="~/web/images/img3.jpg" alt=""></li>
+                                    <li><img src="~/web/images/img4.jpg" alt=""></li>*@
                             </ul>
                         </div>
                     </div>
@@ -72,32 +78,35 @@
         <div class="wrap">
             <div class="wrapper">
                 <div class="con-top">
-                    <h2 class="indent-left margin-bot" style=
-                        "margin-left:80px">Tatil&Seyahat Blogum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
-                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                    aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud 
-                    exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea 
-                    commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
-                    vulputate velit esse molestie consequat, vel illum dolore eu feugiat
-                    nulla facilisis at vero eros et accumsan et iusto odio dignissim qui 
-                    blandit praesent luptatum zzril delenit augue duis dolore te feugait
-                    nulla facil</p>
+                    <h2 class="indent-left margin-bot" style="margin-left:80px">
+                        Tatil&Seyahat Blogum
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                        aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
+                        exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+                        commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
+                        vulputate velit esse molestie consequat, vel illum dolore eu feugiat
+                        nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+                        blandit praesent luptatum zzril delenit augue duis dolore te feugait
+                        nulla facil
+                    </p>
                 </div>
-                        @Html.Action("Partial1","Default")
+                @Html.Action("Partial1", "Default")
                 <div class="grids">
                     <div class="box1">
                         @Html.Action("Partial3", "Default")
                         @Html.Action("Partial4", "Default")
 
-                        
+
                         <div class="clear"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+
 </body>
 </html>
 
